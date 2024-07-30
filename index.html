@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Concert Ticket Preview</title>
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link href="assets/css/styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col-md-6">
+          <h3>Enter Concert Details</h3>
+          <form id="ticketForm" class="needs-validation" novalidate>
+            <div class="form-group">
+              <label for="artist">Artist</label>
+              <input type="text" class="form-control" id="artist" required />
+              <div class="invalid-feedback">
+                Please enter the artist's name.
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="tour">Name of the Tour</label>
+              <input type="text" class="form-control" id="tour" required />
+              <div class="invalid-feedback">
+                Please enter the name of the tour.
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="section">Section</label>
+              <input type="text" class="form-control" id="section" required />
+              <div class="invalid-feedback">Please enter the section.</div>
+            </div>
+            <div class="form-group">
+              <label for="row">Row</label>
+              <input type="text" class="form-control" id="row" required />
+              <div class="invalid-feedback">Please enter the row.</div>
+            </div>
+            <div class="form-group">
+              <label for="seat">Seat</label>
+              <input type="text" class="form-control" id="seat" required />
+              <div class="invalid-feedback">Please enter the seat.</div>
+            </div>
+            <div class="form-group">
+              <label for="hour">Hour of the Event</label>
+              <input type="time" class="form-control" id="hour" required />
+              <div class="invalid-feedback">
+                Please enter the hour of the event.
+              </div>
+            </div>
+            <button type="button" class="btn btn-primary" id="previewBtn">
+              Preview Ticket
+            </button>
+            <button type="button" class="btn btn-secondary" id="clearBtn">
+              Clear
+            </button>
+          </form>
+          <h3>Previous Tickets</h3>
+          <div id="previousTickets" class="mt-3">
+            <select class="form-control" id="ticketsDropdown">
+              <option value="">Select a previous ticket</option>
+            </select>
+          </div>
+          <button
+            type="button"
+            class="btn btn-danger mt-3"
+            id="clearStorageBtn"
+          >
+            Clear All Tickets
+          </button>
+        </div>
+        <div class="col-md-6">
+          <h3>Ticket Preview</h3>
+          <div id="ticketPreview" class="ticket-preview">
+            <p>Fill in the form to preview the ticket.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="assets/js/scripts.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  </body>
+</html>

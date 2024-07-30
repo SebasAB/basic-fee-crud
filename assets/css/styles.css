@@ -1,0 +1,147 @@
+body {
+  background-color: #e0e0e0;
+  font-family: "Arial", sans-serif;
+}
+
+.container {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.ticket-preview {
+  border: 1px solid #ddd;
+  padding: 30px 20px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #00b4d8 0%, #90e0ef 100%);
+  margin-top: 20px;
+  text-align: center;
+  animation: slideUp 1s;
+  color: #333;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.ticket-preview::before,
+.ticket-preview::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 30px;
+  height: 30px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+.ticket-preview::before {
+  left: -15px;
+}
+
+.ticket-preview::after {
+  right: -15px;
+}
+
+.ticket-preview h4 {
+  font-size: 28px;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.ticket-preview p {
+  font-size: 18px;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.ticket-preview .barcode {
+  width: 100%;
+  height: 50px;
+  background: repeating-linear-gradient(
+    90deg,
+    #000,
+    #000 2px,
+    #fff 2px,
+    #fff 4px
+  );
+  margin: 20px 0;
+  animation: barcodePulse 2s infinite;
+}
+
+@keyframes barcodePulse {
+  0% {
+    background-size: 100%;
+  }
+  50% {
+    background-size: 110%;
+  }
+  100% {
+    background-size: 100%;
+  }
+}
+
+h3 {
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  animation: fadeIn 0.5s;
+}
+
+input.is-invalid {
+  border-color: red;
+  animation: shake 0.3s;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  75% {
+    transform: translateX(-5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.btn {
+  margin-right: 10px;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+  color: #fff;
+}
