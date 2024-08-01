@@ -45,8 +45,7 @@ document.getElementById("previewBtn").addEventListener("click", function () {
 
 document.getElementById("clearBtn").addEventListener("click", function () {
   document.getElementById("ticketForm").reset();
-  document.getElementById("ticketPreview").innerHTML =
-    "<p>Fill in the form to preview the ticket.</p>";
+  clearPreviewTicket();
   [...document.querySelectorAll("input")].forEach((input) => {
     input.classList.remove("is-invalid");
   });
@@ -57,15 +56,18 @@ document
   .addEventListener("click", function () {
     localStorage.removeItem("tickets");
     loadPreviousTickets();
-    document.getElementById("ticketPreview").innerHTML =
-      "<p>Fill in the form to preview the ticket.</p>";
+    clearPreviewTicket();
   });
 
 document
   .getElementById("ticketsDropdown")
-  .addEventListener("change", function () {
-    const index = this.value;
-    showTicket(index);
+  .addEventListener("change", function (event) {
+    const index = event.target.value
+    if (index !== "") {
+      showTicket(index);
+      return;
+    }
+    clearPreviewTicket();
   });
 
 function generateCode() {
@@ -112,4 +114,9 @@ function showTicket(index) {
           <p>Code: ${ticket.code}</p>
       </div>
   `;
+}
+
+function clearPreviewTicket() {
+  document.getElementById("ticketPreview").innerHTML =
+    "<p>Fill in the form to preview the ticket.</p>";
 }
